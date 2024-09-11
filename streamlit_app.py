@@ -13,7 +13,7 @@ selected_leagues = st.sidebar.multiselect(label='Leagues', options=sorted(unique
 selected_leagues = [f"'{s}'" for s in selected_leagues]
 selected_leagues = f"({','.join(selected_leagues)})"
 
-bets = db.get_bets(leagues=selected_leagues, min_val=float(min_diff) / 100)
+bets = db.get_bets(leagues=selected_leagues, min_val=float(min_val) / 100)
 
 dataframe = pd.DataFrame(bets)
 
