@@ -14,4 +14,4 @@ def get_bets(leagues: str, min_val: float):
 @st.cache_data(ttl=10)
 def get_leagues():
 
-  return conn.query(f"SELECT DISTINCT(league) FROM {TABLE_BETS} WHERE starts >= NOW()", ttl=600)['league_name'].tolist()
+  return conn.query(f"SELECT DISTINCT(league) FROM {TABLE_BETS} WHERE starts >= NOW()", ttl=600)['league'].tolist()
