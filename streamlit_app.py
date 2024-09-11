@@ -1,6 +1,9 @@
 import time
 import pandas as pd
 import streamlit as st
+
+st.set_page_config(page_title="PropHunter by BettingIsCool", page_icon="🍀", layout="wide", initial_sidebar_state="expanded")
+
 import db_oddsapi as db
 from datetime import datetime
 
