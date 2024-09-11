@@ -6,11 +6,6 @@ from datetime import datetime
 
 from config import TEXT_LANDING_PAGE
 
-# Switch to wide-mode for better view
-st.set_page_config(layout="wide")
-
-# Display name & widgets in side bar
-
 min_val = st.sidebar.slider(label='Min Diff Percentage', min_value=0, max_value=25, value=2.5, step=0.5)
 
 unique_leagues = db.get_leagues()
