@@ -4,6 +4,10 @@ import streamlit as st
 import db_oddsapi as db
 from datetime import datetime
 
+st.set_page_config(page_title="Betlogger by BettingIsCool", page_icon="🦈", layout="wide", initial_sidebar_state="expanded")
+
+import db_pinnacle as db
+
 from config import TEXT_LANDING_PAGE
 
 min_val = st.sidebar.slider(label='Min Value Percentage', min_value=0.00, max_value=25.0, value=2.5, step=0.5)
