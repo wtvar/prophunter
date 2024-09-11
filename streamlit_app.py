@@ -1,8 +1,7 @@
 import time
-import tools
-import db_imr
 import pandas as pd
 import streamlit as st
+import db_oddsapi as db
 from datetime import datetime
 import matplotlib.pyplot as plt
 
