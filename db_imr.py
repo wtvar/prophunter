@@ -2,7 +2,7 @@ import streamlit as st
 from sqlalchemy import text
 from config import TABLE_BETS
 
-conn = st.connection('imr', type='sql')
+conn = st.connection('oddsapi', type='sql')
 
 
 @st.cache_data(ttl=10)
