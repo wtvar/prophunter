@@ -17,7 +17,12 @@ selected_leagues = st.sidebar.multiselect(label='Leagues', options=sorted(unique
 selected_leagues = [f"'{s}'" for s in selected_leagues]
 selected_leagues = f"({','.join(selected_leagues)})"
 
-bets = db.get_bets(leagues=selected_leagues, min_val=float(min_val) / 100)
+unique_books = db.get_books()
+selected_books = st.sidebar.multiselect(label='Bookmakers', options=sorted(unique_books), default=unique_books)
+selected_books = [f"'{s}'" for s in selected_books]
+selected_books = f"({','.join(selected_books)})"
+
+bets = db.get_bets(leagues=selected_leagues, books=selected_books, min_val=float(min_val) / 100)
 
 dataframe = pd.DataFrame(bets)
 
