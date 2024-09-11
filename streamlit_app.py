@@ -3,7 +3,6 @@ import pandas as pd
 import streamlit as st
 import db_oddsapi as db
 from datetime import datetime
-import matplotlib.pyplot as plt
 
 from config import TEXT_LANDING_PAGE
 
