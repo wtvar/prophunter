@@ -4,7 +4,7 @@ import streamlit as st
 import db_oddsapi as db
 from datetime import datetime
 
-st.set_page_config(page_title="Betlogger by BettingIsCool", page_icon="🦈", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="PropHunter by BettingIsCool", page_icon="🍀", layout="wide", initial_sidebar_state="expanded")
 
 import db_pinnacle as db
 
