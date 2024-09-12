@@ -48,4 +48,4 @@ bets_df = bets_df.rename(columns={'starts': 'STARTS', 'league': 'LEAGUE', 'runne
 bets_df = bets_df[['STARTS', 'LEAGUE', 'STARTS', 'HOME_TEAM', 'AWAY_TEAM', 'MARKET', 'SELECTION', 'LINE', 'ODDS', 'FAIR_ODDS', 'VALUE', 'BOOKMAKER', 'LAST_UPDATE']]
 #styled_df = bets_df.style.applymap(color_cells, subset=['VALUE']).format({'LINE': '{:g}'.format, 'ODDS': '{:,.3f}'.format, 'FAIR_ODDS': '{:,.3f}'.format, 'VALUE': '{:,.2%}'.format})
 
-st.write(styled_df) 
+st.write(bets_df) 
