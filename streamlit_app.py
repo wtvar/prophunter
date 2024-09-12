@@ -1,6 +1,7 @@
 import time
 import pandas as pd
 import streamlit as st
+from st_paywall import add_auth
 
 st.set_page_config(page_title="PropHunter by BettingIsCool", page_icon="🍀", layout="wide", initial_sidebar_state="expanded")
 
@@ -9,7 +10,13 @@ from datetime import datetime
 
 from config import TEXT_LANDING_PAGE
 
-st.markdown(TEXT_LANDING_PAGE)
+placeholder1 = st.empty()
+placeholder1.markdown(TEXT_LANDING_PAGE)
+
+add_auth(required=True)
+
+placeholder1.empty()
+
 
 def refresh_table():
 
@@ -38,7 +45,6 @@ def highlight_outdated_odds(val):
  return f'color: {color}'
 
 
-
 min_val = st.sidebar.slider(label='Min Value Percentage', min_value=0.00, max_value=25.0, value=2.5, step=0.5)
 
 unique_leagues = db.get_leagues()
@@ -59,4 +65,5 @@ bets_df = bets_df.rename(columns={'starts': 'STARTS', 'league': 'LEAGUE', 'runne
 bets_df = bets_df[['STARTS', 'LEAGUE', 'HOME_TEAM', 'AWAY_TEAM', 'MARKET', 'SELECTION', 'LINE', 'ODDS', 'FAIR_ODDS', 'VALUE', 'BOOKMAKER', 'LAST_UPDATE']]
 styled_df = bets_df.style.applymap(color_cells, subset=['VALUE']).applymap(highlight_outdated_odds, subset=['LAST_UPDATE']).format({'LINE': '{:g}'.format, 'ODDS': '{:,.3f}'.format, 'FAIR_ODDS': '{:,.3f}'.format, 'VALUE': '{:,.2%}'.format})
 
-st.write(styled_df) 
+if len(bets_df) > 0:
+  st.write(styled_df) 
