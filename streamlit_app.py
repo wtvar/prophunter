@@ -15,6 +15,8 @@ placeholder1.markdown(TEXT_LANDING_PAGE)
 
 add_auth(required=True)
 
+st.write(st.session_state.subscriptions)
+
 placeholder1.empty()
 
 
