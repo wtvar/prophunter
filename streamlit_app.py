@@ -21,8 +21,8 @@ def color_cells(val):
     
     if val > 0.05:
         color = 'green'
-      elif val > 0.025:
-        color = 'yellow'
+    elif val > 0.025:
+      color = 'yellow'
 
   return f'color: {color}'
 
