@@ -25,57 +25,13 @@ TEXT_LANDING_PAGE = """
 ##### 🇺🇸 US Bookmakers
 BetOnline.ag, BetMGM, BetRivers, BetUS, Bovada, DraftKings, FanDuel, LowVig.ag, MyBookie.ag, PointsBet (US), SuperBook, Unibet, William Hill (Caesars), WynnBET, betPARX, ESPN BET, Fliff, Hard Rock Bet, SI Sportsbook, Tipico, Wind Creek (Betfred PA)
 
-🇬🇧 UK Bookmakers
-888sport
-Betfair Exchange
-Betfair Sportsbook
-Bet Victor
-Betway
-BoyleSports
-Casumo
-Coral
-Grosvenor
-Ladbrokes
-LeoVegas
-LiveScore Bet
-Matchbook
-Mr Green
-Paddy Power
-Sky Bet
-Unibet
-Virgin Bet
-William Hill (UK)
+##### 🇬🇧 UK Bookmakers
+888sport, Betfair Exchange, Betfair Sportsbook, Bet Victor, Betway, BoyleSports, Casumo, Coral, Grosvenor, Ladbrokes, LeoVegas (Unibet), LiveScore Bet, Matchbook, Mr Green (Unibet), Paddy Power, Sky Bet, Unibet, Virgin Bet, William Hill (UK)
 
-🇪🇺 EU Bookmakers
-1xBet
-888sport
-Betclic
-Betfair Exchange
-BetOnline.ag
-Betsson
-Bet Victor
-Coolbet
-Everygame
-Livescorebet (EU)
-Marathon Bet
-Matchbook
-MyBookie.ag
-NordicBet
-Suprabets
-Unibet
-William Hill
+##### 🇪🇺 EU Bookmakers
+1xBet, 888sport, Betclic, Betfair Exchange, BetOnline.ag, Betsson, Bet Victor, Coolbet, Everygame, Livescorebet (EU), Marathon Bet, Matchbook, MyBookie.ag, NordicBet, Suprabets, Unibet, William Hill
 
-🇦🇺 AU Bookmakers
-Betfair Exchange
-Betr
-BlueBet
-Ladbrokes
-Neds
-PlayUp
-PointsBet (AU)
-SportsBet
-TAB
-TopSport
-Unibet
+##### 🇦🇺 AU Bookmakers
+Betfair Exchange, BlueBet, Ladbrokes, Neds, PlayUp, PointsBet (AU), SportsBet, TAB, TopSport, Unibet
 
 """
