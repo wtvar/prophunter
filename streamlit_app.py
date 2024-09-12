@@ -44,6 +44,7 @@ def highlight_outdated_odds(val):
   color = 'green'
  return f'color: {color}'
 
+st.button('Refresh Table', on_click=refresh_table)
 
 min_val = st.sidebar.slider(label='Min Value Percentage', min_value=0.00, max_value=25.0, value=2.5, step=0.5)
 
@@ -65,7 +66,6 @@ if selected_leagues != '()':
     
     if bets:
     
-      st.button('Refresh Table', on_click=refresh_table)
       bets_df = pd.DataFrame(bets)
       bets_df = bets_df.rename(columns={'starts': 'STARTS', 'league': 'LEAGUE', 'runner_home': 'HOME_TEAM', 'runner_away': 'AWAY_TEAM', 'market': 'MARKET', 'selection': 'SELECTION', 'side': 'SIDE', 'line': 'LINE', 'odds': 'ODDS', 'fair_odds': 'FAIR_ODDS', 'book': 'BOOKMAKER', 'value': 'VALUE', 'timestamp': 'LAST_UPDATE'})
       bets_df = bets_df[['STARTS', 'LEAGUE', 'HOME_TEAM', 'AWAY_TEAM', 'MARKET', 'SELECTION', 'LINE', 'SIDE', 'ODDS', 'FAIR_ODDS', 'VALUE', 'BOOKMAKER', 'LAST_UPDATE']]
