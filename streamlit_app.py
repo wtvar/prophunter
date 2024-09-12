@@ -52,6 +52,8 @@ selected_leagues = st.sidebar.multiselect(label='Leagues', options=sorted(unique
 selected_leagues = [f"'{s}'" for s in selected_leagues]
 selected_leagues = f"({','.join(selected_leagues)})"
 
+st.write(unique_leagues)
+
 unique_books = db.get_books()
 selected_books = st.sidebar.multiselect(label='Bookmakers', options=sorted(unique_books), default=unique_books)
 selected_books = [f"'{s}'" for s in selected_books]
