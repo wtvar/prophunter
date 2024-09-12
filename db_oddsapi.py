@@ -26,4 +26,4 @@ def get_books():
 @st.cache_data(ttl=10)
 def get_regions():
 
-  return conn.query(f"SELECT DISTINCT(region) FROM {TABLE_BETS} WHERE starts >= NOW()", ttl=600)['book'].tolist()
+  return conn.query(f"SELECT DISTINCT(region) FROM {TABLE_BETS} WHERE starts >= NOW()", ttl=600)['region'].tolist()
