@@ -22,7 +22,7 @@ TEXT_LANDING_PAGE = """
 
 👇 List of supported bookmakers 👇
 
-🇺🇸 US Bookmakers
+##### 🇺🇸 US Bookmakers
 BetOnline.ag, BetMGM, BetRivers, BetUS, Bovada, DraftKings, FanDuel, LowVig.ag, MyBookie.ag, PointsBet (US), SuperBook, Unibet, William Hill (Caesars), WynnBET, betPARX, ESPN BET, Fliff, Hard Rock Bet, SI Sportsbook, Tipico, Wind Creek (Betfred PA)
 
 🇬🇧 UK Bookmakers
