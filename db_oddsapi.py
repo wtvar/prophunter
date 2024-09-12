@@ -6,9 +6,9 @@ conn = st.connection('oddsapi', type='sql')
 
 
 @st.cache_data(ttl=10)
-def get_bets(leagues: str, books: str, min_val: float):
+def get_bets(leagues: str, books: str, regions: str, min_val: float):
 
-  return conn.query(f"SELECT starts, league, runner_home, runner_away, market, selection, side, line, odds, fair_odds, book, region, value, timestamp FROM {TABLE_BETS} WHERE league IN {leagues} AND book IN {books} AND value >= {min_val} AND starts >= NOW() ORDER BY starts", ttl=600).to_dict('records')
+  return conn.query(f"SELECT starts, league, runner_home, runner_away, market, selection, side, line, odds, fair_odds, book, region, value, timestamp FROM {TABLE_BETS} WHERE league IN {leagues} AND book IN {books} AND region IN {regions} AND value >= {min_val} AND starts >= NOW() ORDER BY starts", ttl=600).to_dict('records')
 
 
 @st.cache_data(ttl=10)
