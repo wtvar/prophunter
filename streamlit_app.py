@@ -9,6 +9,8 @@ from datetime import datetime
 
 from config import TEXT_LANDING_PAGE
 
+st.markdown(TEXT_LANDING_PAGE)
+
 def refresh_table():
 
   st.cache_data.clear()
