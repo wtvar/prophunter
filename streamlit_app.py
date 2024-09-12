@@ -62,7 +62,7 @@ if selected_leagues != '()':
 
   if selected_regions != '()':
     
-    unique_books = db.get_books()
+    unique_books = db.get_books(regions=selected_regions)
     selected_books = st.sidebar.multiselect(label='Bookmakers', options=sorted(unique_books), default=unique_books)
     selected_books = [f"'{s}'" for s in selected_books]
     selected_books = f"({','.join(selected_books)})"
