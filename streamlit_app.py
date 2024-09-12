@@ -69,7 +69,7 @@ if selected_leagues != '()':
   
     if selected_books != '()':
     
-      bets = db.get_bets(leagues=selected_leagues, books=selected_books, min_val=float(min_val) / 100)
+      bets = db.get_bets(leagues=selected_leagues, books=selected_books, regions=selected_regions, min_val=float(min_val) / 100)
       
       if bets:
       
