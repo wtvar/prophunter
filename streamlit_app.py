@@ -55,21 +55,28 @@ selected_leagues = f"({','.join(selected_leagues)})"
 
 if selected_leagues != '()':
 
-  unique_books = db.get_books()
-  selected_books = st.sidebar.multiselect(label='Bookmakers', options=sorted(unique_books), default=unique_books)
-  selected_books = [f"'{s}'" for s in selected_books]
-  selected_books = f"({','.join(selected_books)})"
+  unique_regions = db.get_regions()
+  selected_regions = st.sidebar.multiselect(label='Regions', options=sorted(unique_regions), default=unique_regions)
+  selected_regions = [f"'{s}'" for s in selected_regions]
+  selected_regions = f"({','.join(selected_regions)})"
 
   if selected_books != '()':
+    
+    unique_books = db.get_books()
+    selected_books = st.sidebar.multiselect(label='Bookmakers', options=sorted(unique_books), default=unique_books)
+    selected_books = [f"'{s}'" for s in selected_books]
+    selected_books = f"({','.join(selected_books)})"
   
-    bets = db.get_bets(leagues=selected_leagues, books=selected_books, min_val=float(min_val) / 100)
+    if selected_books != '()':
     
-    if bets:
-    
-      bets_df = pd.DataFrame(bets)
-      bets_df = bets_df.rename(columns={'starts': 'STARTS', 'league': 'LEAGUE', 'runner_home': 'HOME_TEAM', 'runner_away': 'AWAY_TEAM', 'market': 'MARKET', 'selection': 'SELECTION', 'side': 'SIDE', 'line': 'LINE', 'odds': 'ODDS', 'fair_odds': 'FAIR_ODDS', 'book': 'BOOKMAKER', 'region': 'REGION', 'value': 'VALUE', 'timestamp': 'LAST_UPDATE'})
-      bets_df = bets_df[['STARTS', 'LEAGUE', 'HOME_TEAM', 'AWAY_TEAM', 'MARKET', 'SELECTION', 'SIDE', 'LINE', 'ODDS', 'FAIR_ODDS', 'VALUE', 'BOOKMAKER', 'REGION', 'LAST_UPDATE']]
-      styled_df = bets_df.style.applymap(color_cells, subset=['VALUE']).applymap(highlight_outdated_odds, subset=['LAST_UPDATE']).format({'LINE': '{:g}'.format, 'ODDS': '{:,.3f}'.format, 'FAIR_ODDS': '{:,.3f}'.format, 'VALUE': '{:,.2%}'.format})
+      bets = db.get_bets(leagues=selected_leagues, books=selected_books, min_val=float(min_val) / 100)
       
-      if len(bets_df) > 0:
-        st.write(styled_df) 
+      if bets:
+      
+        bets_df = pd.DataFrame(bets)
+        bets_df = bets_df.rename(columns={'starts': 'STARTS', 'league': 'LEAGUE', 'runner_home': 'HOME_TEAM', 'runner_away': 'AWAY_TEAM', 'market': 'MARKET', 'selection': 'SELECTION', 'side': 'SIDE', 'line': 'LINE', 'odds': 'ODDS', 'fair_odds': 'FAIR_ODDS', 'book': 'BOOKMAKER', 'region': 'REGION', 'value': 'VALUE', 'timestamp': 'LAST_UPDATE'})
+        bets_df = bets_df[['STARTS', 'LEAGUE', 'HOME_TEAM', 'AWAY_TEAM', 'MARKET', 'SELECTION', 'SIDE', 'LINE', 'ODDS', 'FAIR_ODDS', 'VALUE', 'BOOKMAKER', 'REGION', 'LAST_UPDATE']]
+        styled_df = bets_df.style.applymap(color_cells, subset=['VALUE']).applymap(highlight_outdated_odds, subset=['LAST_UPDATE']).format({'LINE': '{:g}'.format, 'ODDS': '{:,.3f}'.format, 'FAIR_ODDS': '{:,.3f}'.format, 'VALUE': '{:,.2%}'.format})
+        
+        if len(bets_df) > 0:
+          st.write(styled_df) 
